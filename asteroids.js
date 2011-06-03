@@ -1083,18 +1083,19 @@ function Asteroids() {
     if ( forceChange || this.bullets.length != 0 || this.particles.length != 0 || ! this.pos.is(this.lastPos) || this.vel.len() > 0 ) {
       this.ctx.clear();
       
-      // draw player
-      this.ctx.drawPlayer();
-      
-      // draw flames
-      if ( drawFlame )
-        this.ctx.drawFlames(that.flame);
       
       // draw bullets
       if (this.bullets.length) {
         this.ctx.drawBullets(this.bullets);
       }
       
+      // draw player
+      this.ctx.drawPlayer();
+      
+      // draw flames
+      if ( drawFlame )
+        this.ctx.drawFlames(that.flame);
+
       // draw particles
       if (this.particles.length) {
         this.ctx.drawParticles(this.particles);
