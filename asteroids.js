@@ -494,9 +494,10 @@ function Asteroids() {
   };
   
   function setScore() {
-    that.points.innerHTML = window.ASTEROIDS.enemiesKilled * 10;
+    var points = window.ASTEROIDS.enemiesKilled * 10;
+    that.points.innerHTML = points;
 
-    if (window.ASTEROIDS.enemiesKilled >= (window.EASTEREGG.winning_threshold) ) {
+    if (points >= window.EASTEREGG.winning_threshold ) {
       window.EASTEREGG.winning_callback();
     }
   };
@@ -661,7 +662,7 @@ function Asteroids() {
       right = "10px";
       textAlign = "right";
     }
-    this.navigation.innerHTML = "(press esc to quit) ";
+//    this.navigation.innerHTML = "(press esc a) ";
     this.gameContainer.appendChild(this.navigation);
     
     // points
@@ -671,7 +672,8 @@ function Asteroids() {
     this.points.style.fontWeight = "bold";
     this.points.className = "ASTEROIDSYEAH";
     this.navigation.appendChild(this.points);
-    
+    console.log("test");
+/*    
     this.appstore = document.createElement('div');
     with ( this.appstore.style ) {
       position = 'absolute';
@@ -686,6 +688,7 @@ function Asteroids() {
     this.fbLike = document.createElement('div');
     this.fbLike.innerHTML = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FKick-Ass-Destroy-the-web%2F168200253236727&amp;width=292&amp;colorscheme=light&amp;show_faces=false&amp;stream=false&amp;header=false&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:330px; height:70px;" allowTransparency="true"></iframe>';
     this.navigation.appendChild(this.fbLike);
+*/
   } else {
     this.navigation = document.getElementById('ASTEROIDS-NAVIGATION');
     this.points = document.getElementById('ASTEROIDS-POINTS');
