@@ -672,7 +672,6 @@ function Asteroids() {
     this.points.style.fontWeight = "bold";
     this.points.className = "ASTEROIDSYEAH";
     this.navigation.appendChild(this.points);
-    console.log("test");
 /*    
     this.appstore = document.createElement('div');
     with ( this.appstore.style ) {
