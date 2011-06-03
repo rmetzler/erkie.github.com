@@ -1027,7 +1027,9 @@ function Asteroids() {
         indexOf(ignoredTypes, murdered.tagName.toUpperCase()) == -1 &&
         hasOnlyTextualChildren(murdered) && murdered.className != "ASTEROIDSYEAH"
       ) {
-        window.EASTEREGG.breaking_sound.play();
+        if (window.EASTEREGG.breaking_sound && window.EASTEREGG.breaking_sound.play) {
+          window.EASTEREGG.breaking_sound.play();          
+        }
         didKill = true;
         addParticles(this.bullets[i].pos);
         this.dying.push(murdered);
