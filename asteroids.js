@@ -495,6 +495,10 @@ function Asteroids() {
   
   function setScore() {
     that.points.innerHTML = window.ASTEROIDS.enemiesKilled * 10;
+
+    if (window.ASTEROIDS.enemiesKilled >= (window.EASTEREGG.winning_threshold) ) {
+      window.EASTEREGG.winning_callback();
+    }
   };
   
   function hasOnlyTextualChildren(element) {
